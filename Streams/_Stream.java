@@ -21,11 +21,15 @@ public class _Stream {
                         .forEach(System.out::println);
 
         //next
-        people.stream()
-                .map(person -> (person.name))
-                .mapToInt(String::length)
-                .forEach(System.out::println);
+//        people.stream()
+//                .map(person -> (person.name))
+//                .mapToInt(String::length)
+//                .forEach(System.out::println);
 
+        boolean containsOnlyFemales = people.stream()
+                .anyMatch(person -> Gender.FEMALE.equals(person.gender)); //.allMatch(), .noneMatch()
+
+        System.out.println(containsOnlyFemales);
 
         //Set<Gender> genders = people.stream().....blabla
         //System.out.println(genders);
